@@ -3,10 +3,9 @@ import time
 from Elements.djangologin import *
 from Elements.djangomain import *
 from Elements.djangoaddcustomuser import *
-import time
 
 def test_createDefaultUsers(driver): 
-    driver.get("https://chronos-website-eeh6bjdwercmarby.eastasia-01.azurewebsites.net/admin/login/?next=/admin/")
+    driver.get("https://chronos.mgenesis.com/admin/login/?next=/admin/login")
     driver.maximize_window()
     djangoLoginFields = DjangoLoginPageFields(driver)
     djangoLoginButtons = DjangoLoginPageButtons(driver)
@@ -14,7 +13,7 @@ def test_createDefaultUsers(driver):
     djangoACUButtons = DjangoAddCustomUserButtons(driver)
     djangoACUFields = DjangoAddCustomUserFields(driver)
 
-    djangoLoginFields.Email.send_keys('admin@yopmail.com')
+    djangoLoginFields.Email.send_keys('lovely@yopmail.com')
     djangoLoginFields.Password.send_keys('12345')
     djangoLoginButtons.LogIn.click()
     time.sleep(1.5)
